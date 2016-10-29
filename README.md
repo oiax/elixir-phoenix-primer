@@ -1,1 +1,1 @@
-# elixir-phoenix-primer
+# elixir-primer
