@@ -4,5 +4,5 @@ defmodule Hello do
   end
 end
 
-Hello.greet("Alice", [ word: "Hello" ])
-Hello.greet("Bob", [ word: "Howdy" ])
+Hello.greet("Alice", word: "Hello")
+Hello.greet("Bob", word: "Howdy")
