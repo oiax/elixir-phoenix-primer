@@ -1,12 +1,2 @@
-defmodule Employee do
-  defstruct [ :first_name, :give_name ]
-end
-
-defmodule Script do
-  def main do
-    emp = %Employee{ first_name: "太郎", give_name: "山田" }
-    IO.inspect emp
-  end
-end
-
-Script.main
+book1 = %Book{ author: "夏目漱石", title: "坊っちゃん" }
+IO.inspect book1.author
