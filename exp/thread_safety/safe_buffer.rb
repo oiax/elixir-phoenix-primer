@@ -10,7 +10,7 @@ class LimitedBuffer
     p char
     @mutex.synchronize do
       if @value.length < 3
-        sleep(rand)
+        sleep(rand(0.1))
         @value << char
       end
     end
@@ -25,7 +25,7 @@ threads = []
   threads << Thread.new do
     lb.append(char)
   end
-  sleep(0.1)
+  sleep(0.01)
 end
 
 threads.each { |t| t.join }
