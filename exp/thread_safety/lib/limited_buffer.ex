@@ -8,27 +8,27 @@ defmodule LimitedBuffer do
     send(pid, {:append, char})
   end
 
-  def value(pid) do
+  def get(pid) do
     ref = make_ref()
-    send(pid, {:value, self(), ref})
+    send(pid, {:get, self(), ref})
 
     receive do
-      {^ref, value} -> value
+      {^ref, state} -> state
     end
   end
 
-  defp listen(value) do
+  defp listen(state) do
     receive do
       {:append, char} ->
-        if String.length(value) < 3 do
+        if String.length(state) < 3 do
           :rand.uniform(1000) |> :timer.sleep
-          listen(value <> char)
+          listen(state <> char)
         else
-          listen(value)
+          listen(state)
         end
-      {:value, sender, ref} ->
-        send sender, {ref, value}
-        listen(value)
+      {:get, sender, ref} ->
+        send sender, {ref, state}
+        listen(state)
     end
   end
 end

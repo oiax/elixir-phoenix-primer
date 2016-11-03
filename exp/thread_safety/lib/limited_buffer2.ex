@@ -10,20 +10,20 @@ defmodule LimitedBuffer2 do
     GenServer.cast(pid, {:append, char})
   end
 
-  def value(pid) do
-    GenServer.call(pid, :value)
+  def get(pid) do
+    GenServer.call(pid, :get)
   end
 
-  def handle_cast({:append, char}, value) do
-    if String.length(value) < 3 do
+  def handle_cast({:append, char}, state) do
+    if String.length(state) < 3 do
       :rand.uniform(1000) |> :timer.sleep
-      {:noreply, value <> char}
+      {:noreply, state <> char}
     else
-      {:noreply, value}
+      {:noreply, state}
     end
   end
 
-  def handle_call(:value, _from, value) do
-    {:reply, value, value}
+  def handle_call(:get, _from, state) do
+    {:reply, state, state}
   end
 end

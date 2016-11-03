@@ -14,4 +14,4 @@ for _ <- 0..4 do
   receive do _ -> :noop end
 end
 
-IO.puts LimitedBuffer.value(lb)
+IO.puts LimitedBuffer.get(lb)
