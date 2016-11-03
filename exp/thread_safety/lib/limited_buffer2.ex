@@ -1,33 +1,29 @@
-defmodule LimitedBuffer do
+defmodule LimitedBuffer2 do
+  use GenServer
+
   def start_link do
-    {:ok, spawn_link(fn -> listen("") end)}
+    GenServer.start_link(__MODULE__, "")
   end
 
   def append(pid, char) do
-    send(pid, {:append, char})
+    IO.puts char
+    GenServer.cast(pid, {:append, char})
   end
 
   def value(pid) do
-    ref = make_ref()
-    send(pid, {:value, self(), ref})
+    GenServer.call(pid, :value)
+  end
 
-    receive do
-      {^ref, value} -> value
+  def handle_cast({:append, char}, value) do
+    if String.length(value) < 3 do
+      :rand.uniform(1000) |> :timer.sleep
+      {:noreply, value <> char}
+    else
+      {:noreply, value}
     end
   end
 
-  defp listen(value) do
-    receive do
-      {:append, char} ->
-        if String.length(value) < 3 do
-          :rand.uniform(100) |> :timer.sleep
-          listen(value <> char)
-        else
-          listen(value)
-        end
-      {:value, sender, ref} ->
-        send sender, {ref, value}
-        listen(value)
-    end
+  def handle_call(:value, _from, value) do
+    {:reply, value, value}
   end
 end
