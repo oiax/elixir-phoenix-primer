@@ -6,6 +6,7 @@ class LimitedBuffer
   end
 
   def append(char)
+    p char
     if @value.length < 3
       sleep(rand)
       @value << char
@@ -21,8 +22,9 @@ threads = []
   threads << Thread.new do
     lb.append(char)
   end
+  sleep(0.1)
 end
 
 threads.each { |t| t.join }
 
-puts lb.value
+p lb.value
