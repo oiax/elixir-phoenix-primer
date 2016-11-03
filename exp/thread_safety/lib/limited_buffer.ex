@@ -4,6 +4,7 @@ defmodule LimitedBuffer do
   end
 
   def append(pid, char) do
+    IO.puts char
     send(pid, {:append, char})
   end
 
@@ -20,7 +21,7 @@ defmodule LimitedBuffer do
     receive do
       {:append, char} ->
         if String.length(value) < 3 do
-          :rand.uniform(100) |> :timer.sleep
+          :rand.uniform(1000) |> :timer.sleep
           listen(value <> char)
         else
           listen(value)
