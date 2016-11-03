@@ -1,9 +1,9 @@
-defmodule Counter1 do
+defmodule Counter do
   def listen(val) do
     receive do
       :up -> listen(val + 1)
-      :show ->
-        IO.puts "** val = #{val}"
+      {:get, from} ->
+        send from, val
         listen(val)
     end
   end

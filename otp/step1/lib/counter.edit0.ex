@@ -1,4 +1,4 @@
-defmodule Counter0 do
+defmodule Counter do
   def listen(val) do
     IO.puts "** val = #{val}"
 
