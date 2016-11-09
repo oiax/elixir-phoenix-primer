@@ -1,5 +1,5 @@
 defmodule Hello3 do
-  def message(name) do
+  def message(name \\ "world") do
     "Hello, #{name}!"
   end
 end

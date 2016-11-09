@@ -1,4 +1,8 @@
 defmodule Hello3 do
+  def message do
+    "Hello, world!"
+  end
+
   def message(name) do
     "Hello, #{name}!"
   end

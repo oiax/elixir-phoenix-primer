@@ -1,6 +1,6 @@
 defmodule Hello3 do
   def message(name) do
-    "Hello, #{name}!"
+    return "Hello, #{name}!"
   end
 end
 

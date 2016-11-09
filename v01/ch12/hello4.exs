@@ -1,8 +1,3 @@
-defmodule Hello4 do
-  def greet(name) do
-    IO.puts "Hello, #{name}! How are you?"
-  end
-end
-
-Hello4.greet("Alice")
-Hello4.greet
+f = fn (name) -> IO.puts "Hello, #{name}!" end
+f.("Alice")
+f.("Bob")

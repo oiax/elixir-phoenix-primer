@@ -3,3 +3,6 @@ defmodule Hello1 do
     IO.puts "Hello, #{name}!"
   end
 end
+
+Hello1.greet("Alice")
+Hello1.greet("Bob")
