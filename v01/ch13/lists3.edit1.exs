@@ -1,3 +1,2 @@
-a = [ 1, 2 ]
-b = [ [ 13 ] ]
-IO.inspect a ++ b
+numbers = [ 2, 3, 5 ]
+IO.puts Enum.join(numbers, ", ")
