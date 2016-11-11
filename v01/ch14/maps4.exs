@@ -1,3 +1,3 @@
-m = %{ x: 1 }
-m = %{ m | x: 2 }
-IO.inspect m[:x]
+ages = %{"Alice" => 23, "Bob" => 15, "Charlie" => 48}
+ages = %{ages | "Bob" => 16}
+IO.inspect ages

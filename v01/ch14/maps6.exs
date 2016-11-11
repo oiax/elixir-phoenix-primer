@@ -1,4 +1,4 @@
-m = %{ x: 1, y: 2, z: 3 }
-Enum.each m, fn({ key, value }) ->
-  IO.puts "#{key} = #{value}"
+ages = %{"Alice" => 23, "Bob" => 15, "Charlie" => 48}
+Enum.each ages, fn({name, value}) ->
+  IO.puts "#{name}: #{value}"
 end

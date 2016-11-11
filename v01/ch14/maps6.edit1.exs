@@ -1,4 +1,4 @@
-m = %{ x: 1, y: 2, z: 3 }
-for { key, value } <- m do
-  IO.puts "#{key} = #{value}"
+ages = %{"Alice" => 23, "Bob" => 15, "Charlie" => 48}
+for { name, value } <- ages do
+  IO.puts "#{name}: #{value}"
 end
