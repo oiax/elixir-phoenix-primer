@@ -4,5 +4,5 @@ defmodule Hello1 do
   end
 end
 
-Hello1.greet("Alice")
-Hello1.greet("Bob")
+Hello1.greet "Alice"
+Hello1.greet "Bob"
