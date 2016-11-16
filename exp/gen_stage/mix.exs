@@ -15,6 +15,6 @@ defmodule GenStageExample.Mixfile do
   end
 
   defp deps do
-    [{:gen_stage, "~> 0.1"}]
+    [{:gen_stage, "~> 0.8"}]
   end
 end
