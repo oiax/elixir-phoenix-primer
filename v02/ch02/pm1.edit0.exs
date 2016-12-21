@@ -1,3 +1,3 @@
-{:a, 3} = t
+t = {:a, 3}
 {:a, x} = t
 IO.inspect x
