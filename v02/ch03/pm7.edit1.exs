@@ -1,3 +1,3 @@
 s = "ABCDE"
-"ABC" <> x = s
+x <> "DE" = s
 IO.inspect x
