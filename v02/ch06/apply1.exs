@@ -1,0 +1,1 @@
+apply(IO, :puts, ["Hello!"])
