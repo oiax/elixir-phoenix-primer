@@ -1,3 +1,3 @@
-t = {:a, 3}
-{:b, x} = t
-IO.inspect x
+x = {:a, 3}
+{:b, y} = x
+IO.inspect y
