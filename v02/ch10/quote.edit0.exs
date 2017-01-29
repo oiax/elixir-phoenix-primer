@@ -1,5 +1,5 @@
 ast = quote do
-  import Integer
+  import Enum
 end
 
 IO.inspect ast
