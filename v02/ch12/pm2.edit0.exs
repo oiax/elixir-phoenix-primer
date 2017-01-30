@@ -1,3 +1,3 @@
-l = [:a, :b, :c]
-[x, :b, :c] = l
-IO.inspect x
+x = [:a, :b, :c]
+[y, :b, :c] = x
+IO.inspect y

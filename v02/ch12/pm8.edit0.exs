@@ -1,2 +1,3 @@
-x + 3 = 4
-IO.puts x
+x = {:a, 3}
+[:a, y] = x
+IO.inspect y

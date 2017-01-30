@@ -1,4 +1,4 @@
-l = [:a, :b, :c]
-[x | y] = l
-IO.inspect x
+x = [:a, :b, :c]
+[y | z] = x
 IO.inspect y
+IO.inspect z
