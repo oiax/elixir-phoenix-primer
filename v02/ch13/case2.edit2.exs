@@ -3,7 +3,7 @@ for e <- list do
   x = case e do
     n when is_integer(n) -> n
     l when is_list(l) -> Enum.join(l, ":")
-    %{__struct__: User} = u -> "name = #{u.name}"
+    %{__struct__: _} = u -> "name = #{u.name}"
     m when is_map(m) -> "value = #{m.value}"
     b when is_boolean(b) -> b
   end

@@ -5,8 +5,8 @@ defmodule Foo do
     end
   end
 
-  def hello(%{name: name}) do
-    IO.puts "Hello, #{name}!"
+  def hello(user) when is_map(user) do
+    IO.puts "Hello, #{user.name}!"
   end
 
   def hello(_) do
